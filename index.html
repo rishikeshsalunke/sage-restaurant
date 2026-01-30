@@ -569,7 +569,6 @@
     <script>
         function playVideo() {
             const container = document.getElementById('videoContainer');
-            // Make sure to replace YOUR_VIDEO_ID with the actual ID from your video link
             container.innerHTML = `
         <iframe width="100%" height="100%" 
             src="https://www.youtube.com/embed/xPPLbEFbCAo?autoplay=1" 
@@ -585,9 +584,9 @@
             flatpickr("#bookingDate", {
                 enableTime: true,
                 noCalendar: false,
-                dateFormat: "Y-m-d h:i K",   // 12-hour format with AM/PM
-                time_24hr: false,            // IMPORTANT: enables AM/PM
-                minuteIncrement: 15,         // easy time selection
+                dateFormat: "Y-m-d h:i K",
+                time_24hr: false,       
+                minuteIncrement: 15,      
                 minDate: "today"
             });
         });
@@ -598,7 +597,7 @@
 
     <script>
         (function () {
-            emailjs.init("uh16CQ9RmmlVS5ecR"); // your PUBLIC KEY
+            emailjs.init("uh16CQ9RmmlVS5ecR");
         })();
     </script>
 
@@ -607,8 +606,8 @@
             e.preventDefault();
 
             emailjs.sendForm(
-                "service_6zrf1tg",      // Gmail service ID
-                "template_p91zdrb",     // Your template ID
+                "service_6zrf1tg",   
+                "template_p91zdrb",    
                 this
             ).then(
                 function () {
