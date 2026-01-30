@@ -646,16 +646,18 @@
     </script>
 
     <script>
-        const btn = document.getElementById("mobileReserveBtn");
-        const formWrapper = document.getElementById("mobileReservationWrapper");
+    const reserveBtn = document.getElementById("mobileReserveBtn");
+    const reservationSection = document.getElementById("mobileReservationWrapper");
 
-        if (btn) {
-            btn.addEventListener("click", () => {
-                formWrapper.style.display = "block";
-                btn.style.display = "none"; // hide button after click
-            });
+    reserveBtn.addEventListener("click", () => {
+        if (reservationSection.style.display === "none" || reservationSection.style.display === "") {
+            reservationSection.style.display = "block";
+        } else {
+            reservationSection.style.display = "none";
         }
-    </script>
+    });
+</script>
+
 
 
 
