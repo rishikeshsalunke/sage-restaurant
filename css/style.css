@@ -367,17 +367,14 @@ body {
     border-bottom: 2px solid var(--primary);
 }
 @media (max-width: 767px) {
-    /* Shrink icons for better fit */
     .nav-pills .fa-2x {
         font-size: 1.7rem !important;
     }
 
-    /* Reduce padding between icon and text */
     .ps-2 {
         padding-left: 0.5rem !important;
     }
 
-    /* Ensure text doesn't wrap or get cut off */
     .nav-pills .nav-item h6 {
         font-size: 12px !important;
         letter-spacing: -0.5px;
@@ -388,7 +385,6 @@ body {
         line-height: 1;
     }
     
-    /* Make the whole bar scrollable if it still doesn't fit on tiny screens */
     .nav-pills {
         overflow-x: auto;
         overflow-y: hidden;
@@ -610,7 +606,6 @@ body {
     padding-left: 10px;
 }
 
-/* Footer copyright */
 .footer .copyright {
     padding: 25px 0;
     font-size: 14px;
@@ -629,7 +624,6 @@ body {
     text-decoration: underline;
 }
 
-/* Footer titles */
 .footer h4 {
     color: #333;
     letter-spacing: 1px;
@@ -649,9 +643,8 @@ body {
 .footer .footer-menu a:last-child {
     border-right: none;
 }
-/* --- Modern Copyright Section --- */
 .copyright {
-    background: #fdfdfb; /* Very light cream to distinguish from footer */
+    background: #fdfdfb; 
     padding: 30px 0;
 }
 
@@ -662,7 +655,7 @@ body {
 }
 
 .copyright .text-dark {
-    color: var(--primary-custom) !important; /* Uses your theme color for the brand name */
+    color: var(--primary-custom) !important; 
     letter-spacing: 2px;
     text-transform: uppercase;
 }
@@ -736,26 +729,22 @@ section {
         opacity: 0;
         animation: imageFade5 25s infinite;
     }
-    /* Story Image Logic */
     .ps-lg-5 {
         padding-left: 3rem !important;
     }
 
-    /* Hero Section specific to About */
     .position-relative.ps-lg-5 {
         position: relative;
         display: inline-block;
         width: 100%;
     }
 
-    /* Timing for 5 images */
     .slide-img:nth-child(1) { animation-delay: 0s; }
     .slide-img:nth-child(2) { animation-delay: 5s; }
     .slide-img:nth-child(3) { animation-delay: 10s; }
     .slide-img:nth-child(4) { animation-delay: 15s; }
     .slide-img:nth-child(5) { animation-delay: 20s; }
 
-    /* Keyframes */
     @keyframes imageFade5 {
         0% { opacity: 0; }
         4% { opacity: 1; }
@@ -993,7 +982,6 @@ section {
     border: 2px solid rgba(255, 255, 255, 0.05);
 }
 
-/* Floating stagger effect */
 .image-grid .col-6:nth-child(odd) {
     padding-right: 10px;
 }
@@ -1002,7 +990,6 @@ section {
     padding-left: 10px;
 }
 
-/* Hover Glow */
 .hover-glow {
     transition: 0.4s all ease;
     background: rgba(29, 53, 87, 0.1);
@@ -1014,7 +1001,6 @@ section {
     transform: translateY(-10px);
 }
 @media (max-width: 768px) {
-    /* 1. Slim down the header */
     .page-header {
         padding: 3rem 0 1.5rem 0 !important;
         margin-bottom: 1rem !important;
@@ -1022,19 +1008,17 @@ section {
     .page-header h1 { font-size: 1.8rem !important; }
     .page-header p { font-size: 0.8rem !important; max-width: 90% !important; }
 
-    /* 2. Service Cards: Stacked but small */
     section .col-lg-4 {
         margin-bottom: 15px !important;
     }
     .hover-glow {
-        padding: 1.5rem !important; /* Less bulky cards */
+        padding: 1.5rem !important;
     }
     .hover-glow i { font-size: 2rem !important; }
     .hover-glow h4 { font-size: 1.1rem !important; }
 
-    /* 3. The Heritage Section: Balanced Stacking */
     .row.g-0.align-items-center {
-        display: block !important; /* Back to stacking for readability */
+        display: block !important; 
         text-align: center;
     }
 
@@ -1044,26 +1028,23 @@ section {
         margin-bottom: 2rem;
     }
 
-    /* Keep the timeline line centered on mobile */
     .timeline-item {
         border-right: none !important;
         padding-left: 0 !important;
         margin-bottom: 1.5rem !important;
     }
 
-    /* 4. The Slideshow: Make it a nice wide banner instead of a tall box */
     .col-lg-7 {
         width: 100% !important;
     }
     .slideshow-container.portrait-mode {
-        height: 250px !important; /* Wide rectangle looks better on mobile */
+        height: 250px !important; 
         max-width: 100% !important;
         border: 5px solid var(--white) !important;
     }
 
-    /* 5. Floating Stat Box: Move it to a better spot */
     .stat-box-overlay {
-        position: relative !important; /* Stops it from covering the photo */
+        position: relative !important; 
         bottom: 30px !important;
         left: 0 !important;
         margin: 0 auto !important;

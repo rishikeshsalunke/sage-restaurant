@@ -265,8 +265,10 @@
                                 <h1 class="mb-4">Main Dishes</h1>
                                 <p class="mb-4">Indulge in our signature entrees, prepared with the finest seasonal
                                     ingredients and expert culinary techniques.</p>
-                                <a href="LINK_HERE" target="_blank"
-                                    class="btn btn-primary-custom py-3 px-5 mt-2 rounded-pill">See Full Main Menu</a>
+                                <a href="#" data-link=""
+                                    class="btn btn-primary-custom py-3 px-5 mt-2 rounded-pill menu-btn" target="_blank">
+                                    See Full Main Menu
+                                </a>
                             </div>
                         </div>
 
@@ -285,8 +287,10 @@
                                 <h1 class="mb-4">Tasty Snacks</h1>
                                 <p class="mb-4">Perfect for sharing or a light treat. Our snacks are crafted to give you
                                     a burst of flavor in every bite.</p>
-                                <a href="LINK_HERE" target="_blank"
-                                    class="btn btn-primary-custom py-3 px-5 mt-2 rounded-pill">See Full Snacks Menu</a>
+                                <a href="#" data-link=""
+                                    class="btn btn-primary-custom py-3 px-5 mt-2 rounded-pill menu-btn" target="_blank">
+                                    See Full Snacks Menu
+                                </a>
                             </div>
                         </div>
 
@@ -305,8 +309,10 @@
                                 <h1 class="mb-4">Beverages & Drinks</h1>
                                 <p class="mb-4">From artisan coffees to refreshing chilled mocktails, discover the
                                     perfect pairing for your meal.</p>
-                                <a href="LINK_HERE" target="_blank"
-                                    class="btn btn-primary-custom py-3 px-5 mt-2 rounded-pill">See Full Drinks Menu</a>
+                                <a href="#" data-link=""
+                                    class="btn btn-primary-custom py-3 px-5 mt-2 rounded-pill menu-btn" target="_blank">
+                                    See Full Drinks Menu
+                                </a>
                             </div>
                         </div>
 
@@ -325,8 +331,10 @@
                                 <h1 class="mb-4">Desserts</h1>
                                 <p class="mb-4">Satisfy your sweet tooth with our decadent selection of cakes, pastries,
                                     and house-made delights.</p>
-                                <a href="LINK_HERE" target="_blank"
-                                    class="btn btn-primary-custom py-3 px-5 mt-2 rounded-pill">See Full Dessert Menu</a>
+                                <a href="#" data-link=""
+                                    class="btn btn-primary-custom py-3 px-5 mt-2 rounded-pill menu-btn" target="_blank">
+                                    See Full Dessert Menu
+                                </a>
                             </div>
                         </div>
 
@@ -569,7 +577,6 @@
     <script>
         function playVideo() {
             const container = document.getElementById('videoContainer');
-            // Make sure to replace YOUR_VIDEO_ID with the actual ID from your video link
             container.innerHTML = `
         <iframe width="100%" height="100%" 
             src="https://www.youtube.com/embed/xPPLbEFbCAo?autoplay=1" 
@@ -585,9 +592,9 @@
             flatpickr("#bookingDate", {
                 enableTime: true,
                 noCalendar: false,
-                dateFormat: "Y-m-d h:i K",   // 12-hour format with AM/PM
-                time_24hr: false,            // IMPORTANT: enables AM/PM
-                minuteIncrement: 15,         // easy time selection
+                dateFormat: "Y-m-d h:i K",
+                time_24hr: false,
+                minuteIncrement: 15,
                 minDate: "today"
             });
         });
@@ -598,7 +605,7 @@
 
     <script>
         (function () {
-            emailjs.init("uh16CQ9RmmlVS5ecR"); // your PUBLIC KEY
+            emailjs.init("uh16CQ9RmmlVS5ecR");
         })();
     </script>
 
@@ -607,8 +614,8 @@
             e.preventDefault();
 
             emailjs.sendForm(
-                "service_6zrf1tg",      // Gmail service ID
-                "template_p91zdrb",     // Your template ID
+                "service_6zrf1tg",
+                "template_p91zdrb",
                 this
             ).then(
                 function () {
@@ -646,15 +653,33 @@
     </script>
 
     <script>
-        const btn = document.getElementById("mobileReserveBtn");
-        const formWrapper = document.getElementById("mobileReservationWrapper");
+        const reserveBtn = document.getElementById("mobileReserveBtn");
+        const reservationSection = document.getElementById("mobileReservationWrapper");
 
-        if (btn) {
-            btn.addEventListener("click", () => {
-                formWrapper.style.display = "block";
-                btn.style.display = "none"; // hide button after click
+        reserveBtn.addEventListener("click", () => {
+            if (reservationSection.style.display === "none" || reservationSection.style.display === "") {
+                reservationSection.style.display = "block";
+            } else {
+                reservationSection.style.display = "none";
+            }
+        });
+    </script>
+
+    <script>
+        // Select all menu buttons
+        const menuButtons = document.querySelectorAll(".menu-btn");
+
+        menuButtons.forEach(btn => {
+            btn.addEventListener("click", function (e) {
+                const link = this.dataset.link; // get the link from data-link
+
+                if (!link) { // if empty
+                    e.preventDefault(); // stop default navigation
+                    alert("📄 I haven’t uploaded your menu yet. You can add a Google Drive link here.");
+                }
+                // else it will open the link normally
             });
-        }
+        });
     </script>
 
 
